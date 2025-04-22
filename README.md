@@ -1,1 +1,21 @@
 # Grub_Password
+1. Boot into GRUB Menu: Restart your system. When the GRUB menu appears, press e to edit the boot entry. If GRUB doesn't show, hold the Shift key or press Esc during boot to force it to appear.
+# Shift key or press Es
+
+2. Edit GRUB Entry: Locate the line starting with linux that contains boot parameters (it often includes ro for read-only).Add init=/bin/bash at the end of this line to boot directly into a root shell without a password prompt.
+# linux /vmlinuz-xxxx root=UUID=xxxx rw init=/bin/bash
+
+3. Boot into Root Shell:  Press Ctrl+X or F10 to boot with the modified entry. The system will boot directly into a root shell (bash prompt).
+# Ctrl+X or F10
+
+4. Update the Password:
+# passwd username
+
+5. Sync Changes:
+# sync
+
+6. Remount Filesystem (Optional):
+# mount -o remount,ro /
+
+7. Reboot:
+# reboot
